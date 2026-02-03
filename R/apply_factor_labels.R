@@ -12,7 +12,7 @@
 apply_factor_labels <- function(data) {
   load(system.file("extdata/codebook.RData", package = "abcds"))
 
-  check_all <- c("de_race", "mrseqs")
+  check_all <- c("de_race", "mrseqs", "hh_chd_type")
 
   for (i in names(data)) {
     if (i %in% codebook$field_name) {
