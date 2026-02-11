@@ -113,7 +113,7 @@ new_abcds_reader <- function(
     }
 
     if (add_demographics) {
-      demo <- dplyr::right_join(
+      demo <- dplyr::full_join(
         read_age_at_event(
           directory,
           controls = controls,
@@ -454,3 +454,20 @@ read_athropometrics <- new_abcds_reader(
     data[, c("subject_label", "event_sequence", demovars, "ht", "wt", "bmi")]
   }
 )
+
+#' Read consensus diagnosis
+#'
+#' Reads consensus diagnosis data from the consensus data files from the ABCDS study.
+#'
+#' @inheritParams read_demographics
+#'
+#' @return A tibble containing consensus diagnosis optionally merged with demographics.
+#'
+#' @export
+#' @examples
+#' \dontrun{
+#' # Get consensus diagnosis data for participants
+#' consensus_data <- read_consensus()
+#' }
+
+read_consensus <- new_abcds_reader("Consensus")
