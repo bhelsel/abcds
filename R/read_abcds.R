@@ -54,7 +54,7 @@
 #'  [dplyr::right_join()] for merging demographics
 #'
 #' @keywords internal
-#' @noRd
+#' @export
 #' @importFrom cli cli_abort
 #' @importFrom readr read_csv
 #' @importFrom dplyr right_join
@@ -172,9 +172,8 @@ new_abcds_reader <- function(
 #'
 #' @details
 #' This factory is used internally to create grouped reader functions like
-#' [read_imaging()], [read_biomarkers()], and [read_clinical()]. It allows
-#' users to specify the data type either quoted (`"mri"`) or unquoted (`mri`)
-#' using non-standard evaluation via [rlang::ensym()].
+#' read_imaging. It allows users to specify the data type either quoted (`"mri"`) or
+#' unquoted (`mri`) using non-standard evaluation via [rlang::ensym()].
 #'
 #' @seealso
 #'  [new_abcds_reader()] for creating individual reader functions

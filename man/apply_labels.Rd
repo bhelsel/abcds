@@ -4,11 +4,14 @@
 \alias{apply_labels}
 \title{apply_labels}
 \usage{
-apply_labels(data)
+apply_labels(data, add_factor_labels = FALSE)
 }
 \arguments{
 \item{data}{An data set existing in the user's global environment for
 which to apply the labels}
+
+\item{add_factor_labels}{Optionally add factor labels to the categorical measures
+in the codebook before applying variable labels}
 }
 \value{
 A data set that labels all variables existing in the ABC-DS data dictionary
@@ -18,6 +21,6 @@ Apply labels to an existing data set from the ABC-DS data dictionary
 }
 \details{
 Apply labels to an existing data set from the ABC-DS data dictionary.
-This function must be used before the \code{apply_factor_labels} function or the labels
+This function must be used after the \code{apply_factor_labels} function or the labels
 will be removed from the data set.
 }
