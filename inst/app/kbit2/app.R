@@ -20,6 +20,10 @@ ui <- shiny::fluidPage(
 
         # Show a plot of the generated distribution
       shiny::mainPanel(
+        shinny::p("Before entering the raw scores, confirm that you have identified the correct basal item. 
+                  This will be either item #1 or the designated basal item based on age (i.e., Verbal Knowledge #5 for ages 6-7, #10 for age 8, #15 for age 9, #20 for ages 11-15, and #25 for ages 16-90).
+                  The basal item is determined when the participant correctly answers the first three items in a row. 
+                  Only record errors made after the established basal point"),
         shiny::htmlOutput("kbitInputs"),
         shiny::HTML("<hr>"),
         shiny::htmlOutput("kbit2verbstd"),
